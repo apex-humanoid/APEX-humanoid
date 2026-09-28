@@ -1,0 +1,22 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+logs/
+outputs/
+wandb/
+build/
+dist/
+.DS_Store
+_isaac_sim*
+*.pt
+*.pth
+*.npy
+*.npz
+*.pickle
+config-comparison.json
+config-defaults.json
+
+# Explicitly distributed policy exports.
+!checkpoints/*.pt

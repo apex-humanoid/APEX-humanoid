@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "file_count": 6,
+  "total_file_size_bytes": 13872523,
+  "files": [
+    {
+      "skill": "crawl",
+      "task": "Isaac-G1-Velocity-Crawl",
+      "path": "checkpoints/crawl.pt",
+      "file_size_bytes": 1890034,
+      "sha256": "753da6d6152923e830cd5ce0d8a99e8e1c7487041dcd9da3225a3dfc48a22554",
+      "format": "torchscript",
+      "contents": [
+        "actor",
+        "observation_normalizer"
+      ],
+      "normalization_in_forward": true,
+      "actor_input_dim": 588,
+      "action_dim": 23,
+      "supports_training_resume": false
+    },
+    {
+      "skill": "liedown",
+      "task": "Isaac-LyDown-G1",
+      "path": "checkpoints/liedown.pt",
+      "file_size_bytes": 1828162,
+      "sha256": "edbba2b3418db2df52138f0525a0fba04a2059ee24cd3c48186d27276c451d40",
+      "format": "torchscript",
+      "contents": [
+        "actor",
+        "observation_normalizer"
+      ],
+      "normalization_in_forward": true,
+      "actor_input_dim": 558,
+      "action_dim": 23,
+      "supports_training_resume": false
+    },
+    {
+      "skill": "climbdown",
+      "task": "Isaac-Down-G1",
+      "path": "checkpoints/climbdown.pt",
+      "file_size_bytes": 3220724,
+      "sha256": "c0e5714839dbe3d426624616b7fd433b58ceac317039cbb67b0a8ace3c9a41b2",
+      "format": "torchscript",
+      "contents": [
+        "actor",
+        "observation_normalizer"
+      ],
+      "normalization_in_forward": true,
+      "actor_input_dim": 1234,
+      "action_dim": 23,
+      "supports_training_resume": false
+    },
+    {
+      "skill": "standup",
+      "task": "Isaac-StandUp-G1",
+      "path": "checkpoints/standup.pt",
+      "file_size_bytes": 1828214,
+      "sha256": "773fc75becf849d8a37ae1397ebbc4f735d886b4029beac09ba3f33b02bb799b",
+      "format": "torchscript",
+      "contents": [
+        "actor",
+        "observation_normalizer"
+      ],
+      "normalization_in_forward": true,
+      "actor_input_dim": 558,
+      "action_dim": 23,
+      "supports_training_resume": false
+    },
+    {
+      "skill": "walk",
+      "task": "Isaac-G1-Velocity-Walk",
+      "path": "checkpoints/walk.pt",
+      "file_size_bytes": 1884615,
+      "sha256": "35bbfd35cced652b4bf9d3fff448da43c814a7b987447b6d9c56574fd1531cb4",
+      "format": "torchscript",
+      "contents": [
+        "actor",
+        "observation_normalizer"
+      ],
+      "normalization_in_forward": true,
+      "actor_input_dim": 588,
+      "action_dim": 12,
+      "supports_training_resume": false
+    },
+    {
+      "skill": "climbup",
+      "task": "Isaac-ClimbUp-G1",
+      "path": "checkpoints/climbup.pt",
+      "file_size_bytes": 3220774,
+      "sha256": "dd933b83b17b9c5ed143a9fd159fc0b6fd3b4b3801cf05e028e63007e96dc34f",
+      "format": "torchscript",
+      "contents": [
+        "actor",
+        "observation_normalizer"
+      ],
+      "normalization_in_forward": true,
+      "actor_input_dim": 1234,
+      "action_dim": 23,
+      "supports_training_resume": false
+    }
+  ],
+  "playback_contract": {
+    "loader": "torch.jit.load(path, map_location=device).eval()",
+    "input": "The matching task policy observation tensor.",
+    "call": "actions = policy(observations)",
+    "additional_observation_normalization": false,
+    "command_option": "--torchscript --checkpoint checkpoints/<skill>.pt"
+  }
+}
