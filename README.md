@@ -56,3 +56,7 @@ For a server without a display, add `--headless --steps 1000`. To run a full che
 ## License
 
 See [LICENSE](LICENSE) and the third-party notices in [docs/licenses](docs/licenses/) and [source/rsl_rl/licenses](source/rsl_rl/licenses/).
+
+## Perception Stack
+
+For real-world LiDAR odometry and elevation mapping, see [Humanoid LiDAR Elevation Map](https://github.com/apex-humanoid/humanoid_lidar_elevation_map).
